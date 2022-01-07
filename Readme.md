@@ -6,7 +6,7 @@
 
 Created a NodeJS app and user can send get request to this link https://auth-app-mern.herokuapp.com/api to get a greeting message
 
-### 2. Create a database in MongoDB and connect it with your Nodejs application using mongoose, then create an API to register user and insert the data in database, take the followingfields from user:
+### 2. Create a database in MongoDB and connect it with your Nodejs application using mongoose, then create an API to register user and insert the data in database, take the following fields from user:
 
 #### firstname
 
@@ -26,11 +26,11 @@ Passwords are stored in database in hashed format
 
 ### 3. Create a post request which takes user’s email and password from payload, and validates its email and password from database, generate the Json Web Token using user’s Id and send this token in response.
 
-Created an API to log in user, user can send POST request to this link https://auth-app-mern.herokuapp.com/api/login to login, the body the request should contain email and password and the email should be valid, if the password is incorrect then the API responds with message Password is incorrect. If email and password is correct then it responds with the json web token created using mongo db id of the user
+Created an API to log in user, user can send POST request to this link https://auth-app-mern.herokuapp.com/api/login to login, the body of the request should contain email and password and the email should be valid, if the password is incorrect then the API responds with message Password is incorrect. If email and password is correct then it responds with the json web token created using mongo db id of the user
 
 ### 4. Create a get request which sends user’s details in response. Add authorization to this API, use JWT based authorization to validate user’s token and then send user’s profile details (firstname, lastname, email, phone, address only).
 
-Created an API which takes json web token as header and validates it and if it is valid then it responds with the profile data of the user (specifically firstname, lastname, email, phone and address). This API can be accessed through the following link https://auth-app-mern.herokuapp.com/api/profile
+Created an API which takes json web token as header and validates it and if it is valid then it responds with the profile data of the user (specifically firstname, lastname, email, phone and address). This API can be accessed through making a GET request in following link https://auth-app-mern.herokuapp.com/api/profile
 
 ## React
 
@@ -50,10 +50,10 @@ Created an API which takes json web token as header and validates it and if it i
 
 Created a Signup route in react APP which takes firstname, lastname, email, phone,address and password from the user and then makes a POST request to API to create a new user. The form has all the validation it also checks whether the email is valid or not and if the password it minimum 8 characters or not and it all the data is correct it gives message to the user that the user is created successfully and if the email already exists it gives error to user that the email already exists. This route can be accessed by this link https://auth-app-mern.herokuapp.com/signup
 
-### 2. User Login: Create a login page where user can enter their email and password. In this page you have to send login request to thebackend and store the token you receive in response in order to manage login session.
+### 2. User Login: Create a login page where user can enter their email and password. In this page you have to send login request to the backend and store the token you receive in response in order to manage login session.
 
-Created a login route which accepts email and password from user and validates the email and if the email is valid then makes a POST request to the API to validate the credentials given by user, if Json web token is received then it stores it in the local storage to manage login session. If the password is incorrect then it gives error to user. This route can be accessed by https://auth-app-mern.herokuapp.com/login
+Created a login route which accepts email and password from user and validates the email and if the email is valid then makes a POST request to the API to validate the credentials given by user,if credentials are valid then it responds with json web token, Json web token is then stored in the local storage to manage login session. If the password is incorrect then it gives error to user. This route can be accessed by https://auth-app-mern.herokuapp.com/login
 
 ### 3. User Profile Page: Create a page which in which user can view their information like name, email, phone etc.. Make This page will only be accessible for logged in users. Use API to get user’s information from backend(Nodejs). Since this API require authorization, so make use of the token in headers for accessing API.
 
-Created a Profile Route which can only be accessed if the user is logged in and has a valid json web token. This page displays the information of user which is stored in Mongo DB like firstname, lastname, phone, address and email. This route can be accessed by https://auth-app-mern.herokuapp.com/profile
+Created a Profile Route which can only be accessed if the user is logged in and has a valid json web token. This page displays the information of user which is stored in Mongo DB like firstname, lastname, phone, address and email. This route can be accessed by https://auth-app-mern.herokuapp.com/profile. If the user is not logged in it redirects to login page
