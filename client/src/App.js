@@ -51,11 +51,13 @@ function App() {
     }
   };
   useEffect(() => {
-    if (localStorage.getItem("auth_token").length > 10 && !loggedin) {
-      getdata();
-    }
-    if (localStorage.getItem("auth_token").length > 10 && loggedin) {
-      getdata();
+    if (localStorage.getItem("auth_token")) {
+      if (localStorage.getItem("auth_token").length > 10 && !loggedin) {
+        getdata();
+      }
+      if (localStorage.getItem("auth_token").length > 10 && loggedin) {
+        getdata();
+      }
     }
   }, [loggedin]);
   return (
