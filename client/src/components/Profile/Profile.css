@@ -1,0 +1,27 @@
+.profile {
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: fit-content;
+  padding: 40px 10px;
+  max-width: 400px;
+  margin: auto;
+  margin-top: 80px;
+  border-radius: 42px;
+  box-shadow: 0px 24px 94px rgba(70, 90, 140, 0.2);
+  background-color: #fff;
+}
+
+.profile-data {
+  display: flex;
+  flex-direction: column;
+  width: 340px;
+}
+
+@media (max-width: 320px) {
+  .profile-data {
+    width: 300px;
+  }
+}
